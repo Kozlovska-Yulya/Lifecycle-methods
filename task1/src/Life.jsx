@@ -12,7 +12,7 @@ class Life extends Component {
 
   shouldComponentUpdate() {
     console.log(
-      'shouldComponentUpdate(nextProps, nextState): decide to render or notto render'
+      'shouldComponentUpdate(nextProps, nextState): decide to render or not to render'
     );
     return true;
   }
