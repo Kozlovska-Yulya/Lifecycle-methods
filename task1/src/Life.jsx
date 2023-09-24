@@ -10,16 +10,14 @@ class Life extends Component {
     console.log('componentDidMount: API calls, subscriptions');
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log(nextProps, nextState);
+  shouldComponentUpdate() {
     console.log(
       'shouldComponentUpdate(nextProps, nextState): decide to render or notto render'
     );
     return true;
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps, prevState);
+  componentDidUpdate() {
     console.log(
       'componentDidUpdate(prevProps, prevState):some updates based on new props'
     );
