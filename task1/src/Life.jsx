@@ -15,9 +15,11 @@ class Life extends Component {
     console.log(
       'shouldComponentUpdate(nextProps, nextState): decide to render or notto render'
     );
+    return true;
   }
 
   componentDidUpdate(prevProps, prevState) {
+    console.log(prevProps, prevState);
     console.log(
       'componentDidUpdate(prevProps, prevState):some updates based on new props'
     );
@@ -28,11 +30,9 @@ class Life extends Component {
       'componentWillUnmount(): cleanup before DOM related to component will be removed'
     );
   }
-  return() {
-    console.log('eturn React element to build DOM');
-  }
 
   render() {
+    console.log('return React element to build DOM');
     return null;
   }
 }
