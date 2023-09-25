@@ -11,11 +11,9 @@ class Clock extends Component {
 
   getTimeWithOffset = (offset) => {
     const currentTime = new Date();
-    const utcOffset = -currentTime.getTimezoneOffset() / 60;
+    const utcOffset = currentTime.getTimezoneOffset() / 60;
     const newTime = new Date(
-      currentTime.getTime() +
-        offset * 60 * 60 * 1000 +
-        utcOffset * 60 * 60 * 1000
+      currentTime.getTime() + (offset - utcOffset) * 60 * 60 * 1000
     );
     return newTime;
   };
