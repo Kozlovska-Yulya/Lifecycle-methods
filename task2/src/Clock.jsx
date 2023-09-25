@@ -12,10 +12,9 @@ class Clock extends Component {
   getTimeWithOffset = (offset) => {
     const currentTime = new Date();
     const utcOffset = currentTime.getTimezoneOffset() / 60;
-    const newTime = new Date(
-      currentTime.getTime() + (offset - utcOffset) * 60 * 60 * 1000
+    return new Date(
+      currentTime.setHours(currentTime.getHours() + offset + utcOffset)
     );
-    return newTime;
   };
 
   componentDidMount() {
@@ -27,6 +26,7 @@ class Clock extends Component {
   }
 
   componentWillUnmount() {
+    // Очищаем интервал при размонтировании компоненты
     clearInterval(this.interval);
   }
 
