@@ -5,9 +5,16 @@ class Clock extends Component {
     super(props);
     this.state = {
       location: props.location,
-      date: new Date(),
+      date: this.getTimeWithOffset(props.offset),
     };
   }
+
+  getTimeWithOffset = (offset) => {
+    const currentUTC = new Date().getTime();
+    const offsetMilliseconds = offset * 60 * 60 * 1000;
+    const timeWithOffset = new Date(currentUTC + offsetMilliseconds);
+    return timeWithOffset;
+  };
 
   componentDidMount() {
     this.interval = setInterval(() => {
