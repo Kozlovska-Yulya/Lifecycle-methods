@@ -27,6 +27,7 @@ class Dimensions extends Component {
       width,
       height,
     });
+    document.title = `${innerWidth} x ${innerHeight}`;
   };
 
   render() {
