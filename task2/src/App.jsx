@@ -21,7 +21,7 @@ class App extends Component {
       <div>
         <button onClick={this.toggle}>Toggle</button>
         <div>
-          {this.state.visible && <Clock location={'New York'} time={-5} />}
+          {this.state.visible && <Clock location={'New York'} offset={-5} />}
         </div>
       </div>
     );
