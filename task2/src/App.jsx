@@ -20,7 +20,9 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.toggle}>Toggle</button>
-        <div>{this.state.visible && <Clock />}</div>
+        <div>
+          {this.state.visible && <Clock location={'New York'} time={-5} />}
+        </div>
       </div>
     );
   }

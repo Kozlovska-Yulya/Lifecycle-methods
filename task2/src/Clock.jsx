@@ -4,7 +4,7 @@ class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: 'New York',
+      location: props.location,
       date: new Date(),
     };
   }
