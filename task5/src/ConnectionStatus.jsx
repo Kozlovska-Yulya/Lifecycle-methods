@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 
 class ConnectionStatus extends Component {
-  state = {
-    status: 'online',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOnline: true,
+    };
+  }
 
   componentDidMount() {
     window.addEventListener('online', this.handleOnline);
@@ -29,7 +32,7 @@ class ConnectionStatus extends Component {
       <div
         className={`status ${isOnline ? 'status_online' : 'status_offline'}`}
       >
-        {isOnline ? 'Онлайн' : 'Оффлайн'}
+        {isOnline ? 'online' : 'offline'}
       </div>
     );
   }
